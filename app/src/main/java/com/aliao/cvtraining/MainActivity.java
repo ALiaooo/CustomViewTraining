@@ -10,6 +10,7 @@ import android.view.View;
 
 public class MainActivity extends ActionBarActivity implements View.OnClickListener{
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,6 +20,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
 
     private void initViews() {
         findViewById(R.id.btn_canvas).setOnClickListener(this);
+
     }
 
 

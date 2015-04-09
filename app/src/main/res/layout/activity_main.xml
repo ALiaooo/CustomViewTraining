@@ -10,6 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -38,27 +39,64 @@
             <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="300dp"
+                android:layout_height="600dp"
                 android:layout_below="@id/custom_title_view">
 
                 <TextView
                     android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:text="自定义View显示一张图片:wrap_content, 精确宽且设置宽小于字体宽, 图片宽大于字体"/>
+                <ImageView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="自定义View显示一张图片:"/>
+                    android:src="@mipmap/motherofd"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <com.aliao.cvtraining.view.CustomImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        custom:introText="morder of dragron"
+                        custom:introTextSize="20sp"
+                        custom:introTextColor="@android:color/holo_red_light"
+                        custom:imageScaleType="center"
+                        custom:image="@mipmap/motherofd"
+                        android:padding="10dp"
+                        android:background="@android:color/holo_green_light"/>
+
+
+                    <com.aliao.cvtraining.view.CustomImageView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        custom:introText="morder of dragron"
+                        custom:introTextSize="20sp"
+                        custom:introTextColor="@android:color/holo_red_light"
+                        custom:imageScaleType="center"
+                        custom:image="@mipmap/motherofd"
+                        android:background="@android:color/holo_green_light"
+                        android:padding="10dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"/>
+
+                    </LinearLayout>
+
 
                 <com.aliao.cvtraining.view.CustomImageView
-                    android:layout_width="200dp"
-                    android:layout_height="100dp"
-                    android:padding="10dp"
-                    custom:introText="马天宇"
-                    custom:introTextSize="40sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    custom:introText="morder of dragron"
+                    custom:introTextSize="14sp"
                     custom:introTextColor="@android:color/holo_red_light"
-                    custom:imageScaleType="fillXY"
-                    custom:image="@mipmap/ic_launcher"
-                    android:background="@android:color/holo_green_light"/>
+                    custom:imageScaleType="center"
+                    custom:image="@mipmap/motherofd"
+                    android:background="@android:color/holo_green_light"
+                    android:padding="10dp"
+                    android:layout_marginTop="10dp"/>
+
 
             </LinearLayout>
             </RelativeLayout>
+
 
 
         </LinearLayout>
