@@ -99,10 +99,15 @@
 
 
         <Button
-            android:id="@+id/btn_aige"
+            android:id="@+id/btn_aige_circular_ring"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="AigeStudio"/>
+            android:text="自定义圆环，动态设置半径大小"/>
+        <Button
+            android:id="@+id/btn_aige_color_filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ColorFilter的使用"/>
 
 
         </LinearLayout>

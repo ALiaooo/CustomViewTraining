@@ -7,6 +7,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.aliao.cvtraining.utils.Constants;
+
 
 public class MainActivity extends ActionBarActivity implements View.OnClickListener{
 
@@ -20,7 +22,8 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
 
     private void initViews() {
         findViewById(R.id.btn_canvas).setOnClickListener(this);
-        findViewById(R.id.btn_aige).setOnClickListener(this);
+        findViewById(R.id.btn_aige_circular_ring).setOnClickListener(this);
+        findViewById(R.id.btn_aige_color_filter).setOnClickListener(this);
 
     }
 
@@ -49,12 +52,18 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
+        Intent intent = new Intent(MainActivity.this, AigeActivity.class);
         switch (v.getId()){
             case R.id.btn_canvas:
                 startActivity(new Intent(MainActivity.this, CanvasActivity.class));
                 break;
-            case R.id.btn_aige:
-                startActivity(new Intent(MainActivity.this, AigeActivity.class));
+            case R.id.btn_aige_circular_ring:
+                intent.putExtra(Constants.FRAGMENT_INDEX, Constants.CIRCULAR_TING_INTEX);
+                startActivity(intent);
+                break;
+            case R.id.btn_aige_color_filter:
+                intent.putExtra(Constants.FRAGMENT_INDEX, Constants.COLOR_FILTER_INTEX);
+                startActivity(intent);
                 break;
         }
     }
