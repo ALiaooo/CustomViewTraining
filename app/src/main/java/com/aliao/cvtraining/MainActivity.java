@@ -20,6 +20,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
 
     private void initViews() {
         findViewById(R.id.btn_canvas).setOnClickListener(this);
+        findViewById(R.id.btn_aige).setOnClickListener(this);
 
     }
 
@@ -51,6 +52,9 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         switch (v.getId()){
             case R.id.btn_canvas:
                 startActivity(new Intent(MainActivity.this, CanvasActivity.class));
+                break;
+            case R.id.btn_aige:
+                startActivity(new Intent(MainActivity.this, AigeActivity.class));
                 break;
         }
     }

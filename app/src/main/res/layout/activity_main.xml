@@ -39,7 +39,7 @@
             <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="600dp"
+                android:layout_height="400dp"
                 android:layout_below="@id/custom_title_view">
 
                 <TextView
@@ -97,6 +97,12 @@
             </LinearLayout>
             </RelativeLayout>
 
+
+        <Button
+            android:id="@+id/btn_aige"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="AigeStudio"/>
 
 
         </LinearLayout>
