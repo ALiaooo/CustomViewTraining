@@ -25,6 +25,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         findViewById(R.id.btn_aige_circular_ring).setOnClickListener(this);
         findViewById(R.id.btn_aige_color_filter).setOnClickListener(this);
         findViewById(R.id.btn_poter_duff_view).setOnClickListener(this);
+        findViewById(R.id.btn_beauty_poter_duff_view).setOnClickListener(this);
         findViewById(R.id.btn_eraser_view).setOnClickListener(this);
 
     }
