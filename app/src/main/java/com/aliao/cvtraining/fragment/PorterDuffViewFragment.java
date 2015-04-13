@@ -8,25 +8,20 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.aliao.cvtraining.R;
-import com.aliao.cvtraining.view.CustomColorFilterView;
 
 /**
- * Created by 丽双 on 2015/4/10.
+ * Created by 丽双 on 2015/4/13.
  */
-public class ColorFilterFragment extends Fragment {
-
-    private CustomColorFilterView mCustomView;
+public class PorterDuffViewFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_color_filter, container, false);
+        View view = inflater.inflate(R.layout.fragment_porterduff, container, false);
         initViews(view);
         return view;
     }
 
     private void initViews(View view) {
-
-//        mCustomView = (CustomColorFilterView) view.findViewById(R.id.custom_color_filter);
 
 
     }

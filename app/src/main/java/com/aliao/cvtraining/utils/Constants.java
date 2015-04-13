@@ -13,6 +13,9 @@ public class Constants {
 
     public static final int CIRCULAR_TING_INTEX = 0;
     public static final int COLOR_FILTER_INTEX = CIRCULAR_TING_INTEX + 1;
+    public static final int POTER_DUFF_INTEX = COLOR_FILTER_INTEX + 1;
+    public static final int BEAUTY_POTER_DUFF_INTEX = POTER_DUFF_INTEX + 1;
+    public static final int ERASER_VIEW_INTEX = BEAUTY_POTER_DUFF_INTEX + 1;
     public static final int IMAGE_REQUEST_INTEX = 2;
     public static final int IMAGE_LOADER_REQUEST_INTEX = 3;
     public static final int NETWORK_IMAGE_LOADER_REQUEST_INTEX = 4;

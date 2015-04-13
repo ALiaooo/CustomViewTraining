@@ -108,6 +108,21 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="ColorFilter的使用"/>
+        <Button
+            android:id="@+id/btn_poter_duff_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PoterDuff xfermode图形混合模式"/>
+        <Button
+            android:id="@+id/btn_beauty_poter_duff_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="图形混合模式-美女图演示"/>
+        <Button
+            android:id="@+id/btn_eraser_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PorterDuffXfermode应用 - 橡皮擦"/>
 
 
         </LinearLayout>

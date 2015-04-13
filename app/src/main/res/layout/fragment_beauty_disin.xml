@@ -3,15 +3,8 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
-    <com.aliao.cvtraining.view.CustomColorFilterView
-        android:id="@+id/custom_color_filter"
+    <com.aliao.cvtraining.view.DisInView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
-
-    <com.aliao.cvtraining.view.PoterDuffColorFilterView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
 
 </LinearLayout>

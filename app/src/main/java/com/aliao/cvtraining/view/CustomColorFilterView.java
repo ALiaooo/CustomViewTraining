@@ -28,6 +28,9 @@ public class CustomColorFilterView extends View {
     private Context mCtx;
     private Bitmap bitmap;
     private int x, y;
+    private int mWidth;
+    private int mHeight;
+    private boolean isClick;//用来标识控件是否被点击过
 
     public CustomColorFilterView(Context context) {
         super(context);
@@ -46,6 +49,27 @@ public class CustomColorFilterView extends View {
          * 初始化资源
          */
         initRes();
+
+        /**
+         * 星星点击效果
+         */
+        setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(isClick){
+                    //如果已被点击了则点击时设置颜色过滤为空还原本色
+                    mPaint.setColorFilter(null);
+                    isClick = false;
+                }else {
+                    //如果未被点击则点击时设置颜色过滤后为黄色
+                    mPaint.setColorFilter(new LightingColorFilter(0xFFFFFFFF, 0x00FFFF00));
+                    isClick = true;
+                }
+                //记得重绘
+                invalidate();
+            }
+        });
+
     }
 
     /**
@@ -53,7 +77,8 @@ public class CustomColorFilterView extends View {
      */
     private void initRes() {
 
-        bitmap = BitmapFactory.decodeResource(mCtx.getResources(), R.mipmap.a);
+//        bitmap = BitmapFactory.decodeResource(mCtx.getResources(), R.mipmap.a);
+        bitmap = BitmapFactory.decodeResource(mCtx.getResources(), R.mipmap.a2);
         /**
          * 计算位图绘制时左上角的坐标，使其位于屏幕中心
          * 屏幕坐标x轴向左偏移位图一半的宽度
@@ -61,7 +86,7 @@ public class CustomColorFilterView extends View {
          */
 
         x = MeasureUtil.getScreenSize((Activity) mCtx)[0] / 2 - bitmap.getWidth() / 2;
-        y = MeasureUtil.getScreenSize((Activity) mCtx)[1] / 2 - bitmap.getHeight() / 2;
+        y = MeasureUtil.getScreenSize((Activity) mCtx)[1] / 4 - bitmap.getHeight() / 2;
     }
 
     private void initPaint() {
@@ -171,8 +196,11 @@ public class CustomColorFilterView extends View {
         /**
          * 光照颜色过滤
          * 参数mul全称是colorMultiply意为色彩倍增，而add全称是colorAdd意为色彩添加，这两个值都是16进制的色彩值0xAARRGGBB
+         * 保持原图不变：mul = 0xFFFFFFFF， add = 0x00000000
+         * int mul = 0xFFFFFF00; //remove BLUE component           移除蓝色B部分，可以根据三基色配色图看
+         * int add = 0x0000FF00; //set GREEN full                  绿色的填满，差不多就这个意思了。
          */
-        mPaint.setColorFilter(new LightingColorFilter(0xFFFF00FF, 0x00000000));
+        mPaint.setColorFilter(new LightingColorFilter(0xFFFFFFFF, 0x00000000));
 
 
     }
@@ -186,6 +214,33 @@ public class CustomColorFilterView extends View {
 //        canvas.drawCircle(MeasureUtil.getScreenSize((Activity) mCtx)[0] / 2, MeasureUtil.getScreenSize((Activity) mCtx)[1] / 2, 200,mPaint);
 
         //绘制位图
-        canvas.drawBitmap(bitmap, x, y, mPaint);
+//        canvas.drawBitmap(bitmap, x, y, mPaint);
+
+        //将CustomColorFilterView和PoterDuffColorFilterView放到同一个Frgment，且各自的宽高都wrap_content
+        canvas.drawBitmap(bitmap, 0, 0, mPaint);
+//        canvas.drawBitmap(bitmap, MeasureUtil.getScreenSize((Activity) mCtx)[0]/2 - mWidth/2,  MeasureUtil.getScreenSize((Activity) mCtx)[0]/4, mPaint);
+    }
+
+    @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+        int widthSize = MeasureSpec.getSize(widthMeasureSpec);
+        int heightSize = MeasureSpec.getSize(heightMeasureSpec);
+        int widthMode = MeasureSpec.getMode(widthMeasureSpec);
+        int heightMode = MeasureSpec.getMode(heightMeasureSpec);
+
+        if (widthMode == MeasureSpec.EXACTLY){
+            mWidth = widthSize;
+        }else {
+            mWidth = getPaddingLeft() + bitmap.getWidth() + getPaddingRight();
+        }
+
+        if (heightMode == MeasureSpec.EXACTLY){
+            mHeight = heightSize;
+        }else {
+            mHeight = getPaddingTop() +bitmap.getHeight() + getPaddingBottom();
+        }
+
+        setMeasuredDimension(mWidth, mHeight);
     }
 }

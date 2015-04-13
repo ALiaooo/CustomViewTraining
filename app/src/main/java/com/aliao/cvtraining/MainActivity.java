@@ -24,6 +24,8 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         findViewById(R.id.btn_canvas).setOnClickListener(this);
         findViewById(R.id.btn_aige_circular_ring).setOnClickListener(this);
         findViewById(R.id.btn_aige_color_filter).setOnClickListener(this);
+        findViewById(R.id.btn_poter_duff_view).setOnClickListener(this);
+        findViewById(R.id.btn_eraser_view).setOnClickListener(this);
 
     }
 
@@ -63,6 +65,18 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
                 break;
             case R.id.btn_aige_color_filter:
                 intent.putExtra(Constants.FRAGMENT_INDEX, Constants.COLOR_FILTER_INTEX);
+                startActivity(intent);
+                break;
+            case R.id.btn_poter_duff_view:
+                intent.putExtra(Constants.FRAGMENT_INDEX, Constants.POTER_DUFF_INTEX);
+                startActivity(intent);
+                break;
+            case R.id.btn_beauty_poter_duff_view:
+                intent.putExtra(Constants.FRAGMENT_INDEX, Constants.BEAUTY_POTER_DUFF_INTEX);
+                startActivity(intent);
+                break;
+            case R.id.btn_eraser_view:
+                intent.putExtra(Constants.FRAGMENT_INDEX, Constants.ERASER_VIEW_INTEX);
                 startActivity(intent);
                 break;
         }

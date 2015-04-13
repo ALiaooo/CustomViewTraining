@@ -4,8 +4,11 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 
+import com.aliao.cvtraining.fragment.BeautyDisInFragment;
 import com.aliao.cvtraining.fragment.CircularRingFragment;
 import com.aliao.cvtraining.fragment.ColorFilterFragment;
+import com.aliao.cvtraining.fragment.EraserViewFragment;
+import com.aliao.cvtraining.fragment.PorterDuffViewFragment;
 import com.aliao.cvtraining.utils.Constants;
 import com.aliao.cvtraining.utils.L;
 
@@ -33,6 +36,21 @@ public class AigeActivity extends FragmentActivity{
                 L.d("颜色过滤器");
                 if (null == fragment)
                     fragment = new ColorFilterFragment();
+                break;
+            case Constants.POTER_DUFF_INTEX:
+                L.d("图形混合模式");
+                if (null == fragment)
+                    fragment = new PorterDuffViewFragment();
+                break;
+            case Constants.BEAUTY_POTER_DUFF_INTEX:
+                L.d("图形混合模式 美女图演示");
+                if (null == fragment)
+                    fragment = new BeautyDisInFragment();
+                break;
+            case Constants.ERASER_VIEW_INTEX:
+                L.d("PorterDuffXfermode应用 - 橡皮擦");
+                if (null == fragment)
+                    fragment = new EraserViewFragment();
                 break;
         }
 
