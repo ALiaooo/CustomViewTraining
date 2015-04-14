@@ -1,4 +1,4 @@
-package com.aliao.cvtraining.view;
+package com.aliao.cvtraining.view.paint;
 
 import android.app.Activity;
 import android.content.Context;

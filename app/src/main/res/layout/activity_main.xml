@@ -123,8 +123,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="PorterDuffXfermode应用 - 橡皮擦"/>
-
-
+        <Button
+            android:id="@+id/btn_font_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Font 字体"/>
+        <Button
+            android:id="@+id/btn_mask_filter_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Paint MaskFilter遮罩"/>
         </LinearLayout>
 
 
