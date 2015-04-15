@@ -138,6 +138,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Path Effect效果"/>
+        <Button
+            android:id="@+id/btn_ecg_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Path Effect之心电图效果"/>
         </LinearLayout>
 
 

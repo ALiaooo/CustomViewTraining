@@ -52,11 +52,7 @@ public class PathEffectView extends View {
 
         //创建路径效果数组
         mEffects = new PathEffect[7];
-    }
 
-    @Override
-    protected void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
 
         /**
          * 实例化各类特效
@@ -109,6 +105,12 @@ public class PathEffectView extends View {
          * 分别对两个参数的效果各自独立表现出来，然后将两个效果简单的重叠在一起显示出来
          */
         mEffects[6] = new SumPathEffect(mEffects[2], mEffects[3]);
+    }
+
+    @Override
+    protected void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+
         /**
          * 绘制路径
          */
@@ -121,8 +123,8 @@ public class PathEffectView extends View {
         }
 
         // 刷新偏移值并重绘视图实现动画效果
-//        mPhase += 1;
-//        invalidate();
+        mPhase += 1;
+        invalidate();
 
     }
 }

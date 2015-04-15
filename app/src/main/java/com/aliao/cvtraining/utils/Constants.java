@@ -19,6 +19,7 @@ public class Constants {
     public static final int FONT_VIEW_INTEX = ERASER_VIEW_INTEX + 1;
     public static final int MASK_FILTER_VIEW_INTEX = FONT_VIEW_INTEX + 1;
     public static final int PATH_EFFECT_VIEW_INTEX = MASK_FILTER_VIEW_INTEX + 1;
+    public static final int ECG_VIEW_INTEX = PATH_EFFECT_VIEW_INTEX + 1;
 
     public static final int POST_REQUEST_INTEX = 5;
     public static final int GSON_REQUEST_INTEX = POST_REQUEST_INTEX + 1;

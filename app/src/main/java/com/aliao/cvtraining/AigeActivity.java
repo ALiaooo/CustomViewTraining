@@ -7,6 +7,7 @@ import android.support.v4.app.FragmentActivity;
 import com.aliao.cvtraining.fragment.BeautyDisInFragment;
 import com.aliao.cvtraining.fragment.CircularRingFragment;
 import com.aliao.cvtraining.fragment.ColorFilterFragment;
+import com.aliao.cvtraining.fragment.ECGViewFragment;
 import com.aliao.cvtraining.fragment.EraserViewFragment;
 import com.aliao.cvtraining.fragment.FontViewFragment;
 import com.aliao.cvtraining.fragment.MaskFilterFragment;
@@ -69,6 +70,11 @@ public class AigeActivity extends FragmentActivity{
                 L.d("路径效果");
                 if (null == fragment)
                     fragment = new PathEffectFragment();
+                break;
+            case Constants.ECG_VIEW_INTEX:
+                L.d("心电图");
+                if (null == fragment)
+                    fragment = new ECGViewFragment();
                 break;
         }
 
