@@ -133,6 +133,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Paint MaskFilter遮罩"/>
+        <Button
+            android:id="@+id/btn_path_effect_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Path Effect效果"/>
         </LinearLayout>
 
 

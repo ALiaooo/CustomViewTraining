@@ -18,6 +18,7 @@ public class Constants {
     public static final int ERASER_VIEW_INTEX = BEAUTY_POTER_DUFF_INTEX + 1;
     public static final int FONT_VIEW_INTEX = ERASER_VIEW_INTEX + 1;
     public static final int MASK_FILTER_VIEW_INTEX = FONT_VIEW_INTEX + 1;
+    public static final int PATH_EFFECT_VIEW_INTEX = MASK_FILTER_VIEW_INTEX + 1;
 
     public static final int POST_REQUEST_INTEX = 5;
     public static final int GSON_REQUEST_INTEX = POST_REQUEST_INTEX + 1;
@@ -25,9 +26,7 @@ public class Constants {
     public static final int DEMO_REQUEST_INTEX = XML_REQUEST_INTEX + 1;
     public static final String FRAGMENT_INDEX = "requestFragment";
 
-
     public static final String NEWS_ID = "newsId";
-
 
     public static final String[] IMAGE_URLS = new String[] {
 // 小图

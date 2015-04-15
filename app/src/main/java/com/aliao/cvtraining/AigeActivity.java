@@ -10,6 +10,7 @@ import com.aliao.cvtraining.fragment.ColorFilterFragment;
 import com.aliao.cvtraining.fragment.EraserViewFragment;
 import com.aliao.cvtraining.fragment.FontViewFragment;
 import com.aliao.cvtraining.fragment.MaskFilterFragment;
+import com.aliao.cvtraining.fragment.PathEffectFragment;
 import com.aliao.cvtraining.fragment.PorterDuffViewFragment;
 import com.aliao.cvtraining.utils.Constants;
 import com.aliao.cvtraining.utils.L;
@@ -63,6 +64,11 @@ public class AigeActivity extends FragmentActivity{
                 L.d("模糊遮罩滤镜和浮雕遮罩滤镜");
                 if (null == fragment)
                     fragment = new MaskFilterFragment();
+                break;
+            case Constants.PATH_EFFECT_VIEW_INTEX:
+                L.d("路径效果");
+                if (null == fragment)
+                    fragment = new PathEffectFragment();
                 break;
         }
 

@@ -29,6 +29,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         findViewById(R.id.btn_eraser_view).setOnClickListener(this);
         findViewById(R.id.btn_font_view).setOnClickListener(this);
         findViewById(R.id.btn_mask_filter_view).setOnClickListener(this);
+        findViewById(R.id.btn_path_effect_view).setOnClickListener(this);
     }
 
 
@@ -87,6 +88,10 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
                 break;
             case R.id.btn_mask_filter_view:
                 intent.putExtra(Constants.FRAGMENT_INDEX, Constants.MASK_FILTER_VIEW_INTEX);
+                startActivity(intent);
+                break;
+            case R.id.btn_path_effect_view:
+                intent.putExtra(Constants.FRAGMENT_INDEX, Constants.PATH_EFFECT_VIEW_INTEX);
                 startActivity(intent);
                 break;
         }
