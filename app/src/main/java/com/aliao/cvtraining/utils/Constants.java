@@ -20,12 +20,18 @@ public class Constants {
     public static final int MASK_FILTER_VIEW_INTEX = FONT_VIEW_INTEX + 1;
     public static final int PATH_EFFECT_VIEW_INTEX = MASK_FILTER_VIEW_INTEX + 1;
     public static final int ECG_VIEW_INTEX = PATH_EFFECT_VIEW_INTEX + 1;
+    public static final int SHADER_VIEW_INTEX = ECG_VIEW_INTEX + 1;
+    public static final int BRICK_VIEW_INTEX = SHADER_VIEW_INTEX + 1;
+    public static final int REFLECT_VIEW_INTEX = BRICK_VIEW_INTEX + 1;
+    public static final int DREAM_EFFECT_VIEW_INTEX = REFLECT_VIEW_INTEX + 1;
+    public static final int MATRIX_VIEW_INTEX = DREAM_EFFECT_VIEW_INTEX + 1;
 
     public static final int POST_REQUEST_INTEX = 5;
     public static final int GSON_REQUEST_INTEX = POST_REQUEST_INTEX + 1;
     public static final int XML_REQUEST_INTEX = GSON_REQUEST_INTEX + 1;
     public static final int DEMO_REQUEST_INTEX = XML_REQUEST_INTEX + 1;
     public static final String FRAGMENT_INDEX = "requestFragment";
+    public static final String TYPE = "type";
 
     public static final String NEWS_ID = "newsId";
 

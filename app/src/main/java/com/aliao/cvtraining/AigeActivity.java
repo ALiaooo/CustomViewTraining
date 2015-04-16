@@ -13,6 +13,7 @@ import com.aliao.cvtraining.fragment.FontViewFragment;
 import com.aliao.cvtraining.fragment.MaskFilterFragment;
 import com.aliao.cvtraining.fragment.PathEffectFragment;
 import com.aliao.cvtraining.fragment.PorterDuffViewFragment;
+import com.aliao.cvtraining.fragment.ShaderViewFragment;
 import com.aliao.cvtraining.utils.Constants;
 import com.aliao.cvtraining.utils.L;
 
@@ -75,6 +76,22 @@ public class AigeActivity extends FragmentActivity{
                 L.d("心电图");
                 if (null == fragment)
                     fragment = new ECGViewFragment();
+                break;
+            case Constants.SHADER_VIEW_INTEX:
+                L.d("Shader View");
+                if (null == fragment)
+                    fragment = new ShaderViewFragment();
+                Bundle bundle = new Bundle();
+                bundle.putString(Constants.TYPE, "shader");
+                fragment.setArguments(bundle);
+                break;
+            case Constants.BRICK_VIEW_INTEX:
+                L.d("Shader View");
+                if (null == fragment)
+                    fragment = new ShaderViewFragment();
+                Bundle bundle1 = new Bundle();
+                bundle1.putString(Constants.TYPE, "brick");
+                fragment.setArguments(bundle1);
                 break;
         }
 

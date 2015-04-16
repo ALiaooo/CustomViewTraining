@@ -31,6 +31,11 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         findViewById(R.id.btn_mask_filter_view).setOnClickListener(this);
         findViewById(R.id.btn_path_effect_view).setOnClickListener(this);
         findViewById(R.id.btn_ecg_view).setOnClickListener(this);
+        findViewById(R.id.btn_shader_view).setOnClickListener(this);
+        findViewById(R.id.btn_brick_view).setOnClickListener(this);
+        findViewById(R.id.btn_reflect_view).setOnClickListener(this);
+        findViewById(R.id.btn_dream_effect_view).setOnClickListener(this);
+        findViewById(R.id.btn_matrix_view).setOnClickListener(this);
     }
 
 
@@ -97,6 +102,26 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
                 break;
             case R.id.btn_ecg_view:
                 intent.putExtra(Constants.FRAGMENT_INDEX, Constants.ECG_VIEW_INTEX);
+                startActivity(intent);
+                break;
+            case R.id.btn_shader_view:
+                intent.putExtra(Constants.FRAGMENT_INDEX, Constants.SHADER_VIEW_INTEX);
+                startActivity(intent);
+                break;
+            case R.id.btn_brick_view:
+                intent.putExtra(Constants.FRAGMENT_INDEX, Constants.BRICK_VIEW_INTEX);
+                startActivity(intent);
+                break;
+            case R.id.btn_reflect_view:
+                intent.putExtra(Constants.FRAGMENT_INDEX, Constants.REFLECT_VIEW_INTEX);
+                startActivity(intent);
+                break;
+            case R.id.btn_dream_effect_view:
+                intent.putExtra(Constants.FRAGMENT_INDEX, Constants.DREAM_EFFECT_VIEW_INTEX);
+                startActivity(intent);
+                break;
+            case R.id.btn_matrix_view:
+                intent.putExtra(Constants.FRAGMENT_INDEX, Constants.MATRIX_VIEW_INTEX);
                 startActivity(intent);
                 break;
         }

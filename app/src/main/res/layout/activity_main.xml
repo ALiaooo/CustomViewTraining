@@ -143,6 +143,31 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Path Effect之心电图效果"/>
+        <Button
+            android:id="@+id/btn_shader_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Shader着色器的使用"/>
+        <Button
+            android:id="@+id/btn_brick_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BitmapShader的Repeat实现BrickView效果"/>
+        <Button
+            android:id="@+id/btn_reflect_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="线性shader和混合模式实现倒影效果"/>
+        <Button
+            android:id="@+id/btn_dream_effect_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="梦幻效果"/>
+        <Button
+            android:id="@+id/btn_matrix_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="marrix view"/>
         </LinearLayout>
 
 
