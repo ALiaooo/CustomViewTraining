@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.view.View;
@@ -15,7 +16,7 @@ import com.aliao.cvtraining.R;
  */
 public class RefectView extends View {
     private Paint mPaint;
-    private Bitmap girlBitmap;
+    private Bitmap mSrcBitmap;
     public RefectView(Context context) {
         super(context);
     }
@@ -35,7 +36,7 @@ public class RefectView extends View {
      * @param context
      */
     private void initRes(Context context) {
-        girlBitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.gril);
+        mSrcBitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.gril);
     }
 
     /**
@@ -48,5 +49,9 @@ public class RefectView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
+
+        //黑色背景
+        canvas.drawColor(Color.BLACK);
+
     }
 }
