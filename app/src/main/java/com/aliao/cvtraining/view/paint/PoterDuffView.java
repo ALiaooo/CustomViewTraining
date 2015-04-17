@@ -28,7 +28,7 @@ import com.aliao.cvtraining.utils.MeasureUtil;
  *
  * PorterDuff.Mode.DST 只绘制目标图像
  * PorterDuff.Mode.DST_ATOP 在源图像和目标图像相交的地方绘制目标图像而在不相交的地方绘制源图像
- * PorterDuff.Mode.DST_IN 只在源图像和目标图像相交的地方绘制目标图像
+ * PorterDuff.Mode.DST_IN 只在源图像和目标图像相交的地方绘制目标图像,取两层绘制交集。显示下层。
  * PorterDuff.Mode.DST_OUT 只在源图像和目标图像不相交的地方绘制目标图像
  * PorterDuff.Mode.DST_OVER 在源图像的上方绘制目标图像,目标图像在上
  * PorterDuff.Mode.LIGHTEN 变亮
@@ -37,8 +37,8 @@ import com.aliao.cvtraining.utils.MeasureUtil;
  * PorterDuff.Mode.SCREEN 滤色，计算方式我不解释了，滤色产生的效果我认为是Android提供的几个色彩混合模式中最好的，它可以让图像焦媃幻化，有一种色调均和的感觉
  * PorterDuff.Mode.SRC 显示源图
  * PorterDuff.Mode.SRC_ATOP 在源图像和目标图像相交的地方绘制源图像，在不相交的地方绘制目标图像
- * PorterDuff.Mode.SRC_IN 只在源图像和目标图像相交的地方绘制源图像
- * PorterDuff.Mode.SRC_OUT 只在源图像和目标图像不相交的地方绘制源图像
+ * PorterDuff.Mode.SRC_IN 只在源图像和目标图像相交的地方绘制源图像。取两层绘制交集。显示上层。
+ * PorterDuff.Mode.SRC_OUT 只在源图像和目标图像不相交的地方绘制源图像。 取上层绘制非交集部分。
  * PorterDuff.Mode.SRV_OVER 在目标图像的顶部绘制源图像,源图像在上
  * PorterDuff.Mode.XOR 在源图像和目标图像重叠之外的任何地方绘制他们，而在不重叠的地方不绘制任何内容
  */
@@ -48,7 +48,7 @@ public class PoterDuffView extends View {
     private PorterDuffBO  porterDuffBO;
     private PorterDuffXfermode porterDuffXfermode;//图形混合模式
 
-    private static final PorterDuff.Mode MODE = PorterDuff.Mode.XOR;
+    private static final PorterDuff.Mode MODE = PorterDuff.Mode.SRC_IN;
     private static final int RECT_SIZE_SMALL = 300;// 左右上方示例渐变正方形的尺寸大小
     private static final int RECT_SIZE_BIG = 600;// 中间测试渐变正方形的尺寸大小
 

@@ -93,6 +93,22 @@ public class AigeActivity extends FragmentActivity{
                 bundle1.putString(Constants.TYPE, "brick");
                 fragment.setArguments(bundle1);
                 break;
+            case Constants.REFLECT_VIEW_INTEX:
+                L.d("图片倒影效果");
+                if (null == fragment)
+                    fragment = new ShaderViewFragment();
+                Bundle bundle2 = new Bundle();
+                bundle2.putString(Constants.TYPE, "reflect");
+                fragment.setArguments(bundle2);
+                break;
+            case Constants.DREAM_EFFECT_VIEW_INTEX:
+                L.d("美女图梦幻效果");
+                if (null == fragment)
+                    fragment = new ShaderViewFragment();
+                Bundle bundle3 = new Bundle();
+                bundle3.putString(Constants.TYPE, "dream");
+                fragment.setArguments(bundle3);
+                break;
         }
 
         getSupportFragmentManager().beginTransaction().replace(android.R.id.content, fragment).commit();

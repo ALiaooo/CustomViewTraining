@@ -136,6 +136,7 @@ public class DisInView extends View {
          */
         int sc = canvas.saveLayer(0, 0, screenW, screenH, null, Canvas.ALL_SAVE_FLAG);
 
+
         //先绘制一层颜色
         canvas.drawColor(0xcc1c093e);
 

@@ -14,4 +14,16 @@
         android:layout_height="wrap_content"
         android:visibility="gone"/>
 
+    <com.aliao.cvtraining.view.paint.ReflectView
+        android:id="@+id/reflect_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"/>
+
+    <com.aliao.cvtraining.view.paint.DreamEffectView
+        android:id="@+id/dream_effect_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"/>
+
 </LinearLayout>
