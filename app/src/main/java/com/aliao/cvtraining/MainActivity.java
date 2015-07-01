@@ -7,7 +7,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.aliao.cvtraining.activity.CheckedViewActivity;
 import com.aliao.cvtraining.utils.Constants;
+import com.aliao.cvtraining.view.widget.CheckedEditText;
 
 
 public class MainActivity extends ActionBarActivity implements View.OnClickListener{
@@ -36,6 +38,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         findViewById(R.id.btn_reflect_view).setOnClickListener(this);
         findViewById(R.id.btn_dream_effect_view).setOnClickListener(this);
         findViewById(R.id.btn_matrix_view).setOnClickListener(this);
+        findViewById(R.id.btn_cheked_view).setOnClickListener(this);
     }
 
 
@@ -123,6 +126,9 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
             case R.id.btn_matrix_view:
                 intent.putExtra(Constants.FRAGMENT_INDEX, Constants.MATRIX_VIEW_INTEX);
                 startActivity(intent);
+                break;
+            case R.id.btn_cheked_view:
+                startActivity(new Intent(MainActivity.this, CheckedViewActivity.class));
                 break;
         }
     }

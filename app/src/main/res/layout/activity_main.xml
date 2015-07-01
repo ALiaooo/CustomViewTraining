@@ -168,6 +168,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="marrix view"/>
+
+        <Button
+            android:id="@+id/btn_cheked_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CheckedEditView"/>
         </LinearLayout>
 
 

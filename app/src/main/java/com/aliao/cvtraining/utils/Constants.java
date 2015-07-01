@@ -25,6 +25,7 @@ public class Constants {
     public static final int REFLECT_VIEW_INTEX = BRICK_VIEW_INTEX + 1;
     public static final int DREAM_EFFECT_VIEW_INTEX = REFLECT_VIEW_INTEX + 1;
     public static final int MATRIX_VIEW_INTEX = DREAM_EFFECT_VIEW_INTEX + 1;
+    public static final int CHECKED_VIEW_INTEX = MATRIX_VIEW_INTEX + 1;
 
     public static final int POST_REQUEST_INTEX = 5;
     public static final int GSON_REQUEST_INTEX = POST_REQUEST_INTEX + 1;

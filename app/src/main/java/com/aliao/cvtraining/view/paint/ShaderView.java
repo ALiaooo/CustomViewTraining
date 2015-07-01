@@ -20,6 +20,8 @@ import com.aliao.cvtraining.R;
 import com.aliao.cvtraining.utils.L;
 import com.aliao.cvtraining.utils.MeasureUtil;
 
+import java.util.Arrays;
+
 /**
  * Created by 丽双 on 2015/4/16.
  */
@@ -97,31 +99,101 @@ public class ShaderView extends View {
          */
 
         BitmapShader bitmapShader = new BitmapShader(bitmap, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP);
-        // 实例一个矩阵对象
-        Matrix matrix = new Matrix();
-        // 设置矩阵变换
-//        matrix.setTranslate(left, top);//Shader此时刚好是从我们矩形的左上方开始着色
+
 
         /*************************************************************
          * 测试matrix
          */
-        matrix.setTranslate(500, 500);
+
+        /**
+         * 实例一个矩阵对象
+         * 原始矩阵：
+         *  [1, 0, 0]
+            [0, 1, 0]
+            [0, 0, 1]
+         */
+        Matrix matrix = new Matrix();
+        // 设置矩阵变换
+//        matrix.setTranslate(left, top);//Shader此时刚好是从我们矩形的左上方开始着色
+
+        //显示矩阵中的值
+        printMatrixValue(matrix);
 
         /**
          * 旋转5度
          * Android中Matrix的pre post set方法理解:
-         * http://www.linuxidc.com/Linux/2012-07/65035.htm
+         * Matrix调用一系列set,pre,post方法时,可视为将这些方法插入到一个队列.当然,按照队列中从头至尾的顺序调用执行.
+         * 其中pre表示在队头插入一个方法,post表示在队尾插入一个方法.而set表示把当前队列清空,并且总是位于队列的最中间位置.
+         * 当执行了一次set后:pre方法总是插入到set前部的队列的最前面,post方法总是插入到set后部的队列的最后面
+         * 矩阵乘法概念：
+         * 左乘即前乘就是乘在左边（在乘号的前面）例如A左乘E即为AE
+         * pre方法表示矩阵前乘，例如：变换矩阵为A，原始矩阵为B，pre方法的含义即是A*B
+         * post方法表示矩阵后乘，例如：变换矩阵为A，原始矩阵为B，post方法的含义即是B*A
+         * http://www.linuxidc.com/Linux/2012-07/65035.htm、
          * matrix.setRotate(5);,set方法一旦调用即会清空之前matrix中的所有变换
-         * matrix.preRotate(5);
-         * matrix.postRotate(5);
+         * matrix.preRotate(5); 矩阵（matrix）先乘
+         * matrix.postRotate(5);矩阵（matrix）后乘
+         * eg:
+         * Matrix的初始值：
+             [sx, k1, 0]
+             [k2, sy, 0]
+             [0,   0,  1]
+             setTranslate(2, 3)后：
+             [sx, k1, 2]
+             [k2, sy, 3]
+             [0,   0,  1]
+             上面set后，再preTranslate(4, 5) 原始矩阵前乘：
+             [sx, k1, 2][1, 0, 4]   [sx, k1, sx*4+k1*5+2]
+             [k2, sy, 3][0, 1, 5] = [k2, sy, k2*4+sy*5+3]
+             [0,   0, 1][0, 0, 1]   [0,  0,  1]
+             上面set后，再postTranslate(4, 5)原始矩阵后乘：
+             [1, 0, 4][sx, k1, 2]   [sx, k1, 2+4]
+             [0, 1, 5][k2, sy, 3] = [k2, sy, 5+3]
+             [0, 0, 1][0,   0, 1]   [0,   0,  1]
+
+         matrix.setTranslate(500, 500);新值覆盖原值，变为500
+         matrix.postTranslate(500, 500);直接加上新值，变为原值+500
+         matrix.preTranslate(500, 500);
+
+         * 怎么用？
+         * http://blog.csdn.net/linmiansheng/article/details/18820599
          */
-        matrix.postRotate(5);
+
+        /**
+         * 设置平移，新值覆盖原值，原始矩阵变为：
+         *  [1, 0, 200]
+            [0, 1, 200]
+            [0, 0, 1]
+         */
+        matrix.setTranslate(200, 100);
         //显示矩阵中的值
+        printMatrixValue(matrix);
+
+        matrix.setScale(2,2);
+        printMatrixValue(matrix);
+        /**
+         * 原始矩阵左乘变换矩阵
+         *  [1, 0, 200]   [1, 0, 200]
+            [0, 1, 200] * [0, 1, 100]
+            [0, 0, 1]     [0, 0, 1]
+         */
+//        matrix.preTranslate(50, 200);
+        /**
+         * 原始矩阵右乘变换矩阵
+         *  [1, 0, 200]   [1, 0, 200]
+            [0, 1, 100] * [0, 1, 200]
+            [0, 0, 1]     [0, 0, 1]
+         */
+        matrix.postTranslate(50, 200);
+        //显示矩阵中的值
+        printMatrixValue(matrix);
+//        matrix.postRotate(5);
+/*        //显示矩阵中的值
         float[] values = new float[9];
         matrix.getValues(values);
         for (int i=0; i<values.length; i++){
             L.d(i+ " = "+values[i]);
-        }
+        }*/
 
 
         /*************************************************************/
@@ -130,6 +202,12 @@ public class ShaderView extends View {
         // 设置着色器
         mPaint.setShader(bitmapShader);
 
+    }
+
+    private void printMatrixValue(Matrix matrix){
+        float[] values = new float[9];
+        matrix.getValues(values);
+        L.d(" Matrix = "+ Arrays.toString(values));
     }
 
 

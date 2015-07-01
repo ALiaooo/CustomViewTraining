@@ -16,4 +16,13 @@
         <attr name="introText" format="string"/>
 
     </declare-styleable>
+
+    <declare-styleable name="CheckedLinearLayout">
+        <attr name="titletext" format="string"/>
+        <attr name="titlecolor" format="color"/>
+        <attr name="optionType">
+            <enum name="normal" value="0"/>
+            <enum name="open" value="1"/>
+        </attr>
+    </declare-styleable>
 </resources>
