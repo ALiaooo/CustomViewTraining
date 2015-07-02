@@ -22,16 +22,15 @@
         android:layout_marginTop="20dp"
         />
 
-    <com.aliao.cvtraining.view.widget.CheckedLinearLayout
-        android:id="@+id/clayout"
+    <Button
+        android:id="@+id/btn_change"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/bg_option_selector_item"
-        android:padding="16dp"
-        android:layout_marginTop="20dp"
-        app:titletext="其他"
-        app:titlecolor="@color/style_color_primary"
-        app:optionType="open"
-        />
+        android:text="changedata"/>
+
+    <ListView
+        android:id="@+id/listview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></ListView>
 
 </LinearLayout>

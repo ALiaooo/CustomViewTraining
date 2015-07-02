@@ -3,6 +3,7 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/aliao/cvtraining/activity/CheckedViewActivity.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/aliao/cvtraining/view/widget/CheckedEditText.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/aliao/cvtraining/view/widget/CheckedOptionView.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/bg_option_selector_item.xml" charset="UTF-8" />
   </component>
 </project>
