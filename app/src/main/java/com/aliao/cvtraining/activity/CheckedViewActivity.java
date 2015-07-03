@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AbsListView;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckedTextView;
@@ -14,6 +15,7 @@ import com.aliao.cvtraining.adapter.OptionAdapter;
 import com.aliao.cvtraining.entity.Option;
 import com.aliao.cvtraining.utils.L;
 import com.aliao.cvtraining.view.widget.CheckedEditText;
+import com.aliao.cvtraining.view.widget.CheckedOptionView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -45,7 +47,7 @@ public class CheckedViewActivity extends Activity implements View.OnClickListene
 
         mListView = (ListView) findViewById(R.id.listview);
 
-        mListView.setChoiceMode(AbsListView.CHOICE_MODE_SINGLE);
+//        mListView.setChoiceMode(AbsListView.CHOICE_MODE_SINGLE);
         for (int i = 0; i<5; i++){
             Option option = new Option();
             if (i == 3){
@@ -57,6 +59,14 @@ public class CheckedViewActivity extends Activity implements View.OnClickListene
         }
         mAdapter = new OptionAdapter(optionList);
         mListView.setAdapter(mAdapter);
+        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                CheckedOptionView optionView = (CheckedOptionView) view.findViewById(R.id.checkedOptionView);
+//                optionView.toggle();
+                mAdapter.addChoicedOption(position);
+            }
+        });
 
 
 
