@@ -1,6 +1,7 @@
 package com.aliao.cvtraining.adapter;
 
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -16,17 +17,19 @@ import com.aliao.cvtraining.view.widget.CheckedOptionView;
 import java.util.List;
 
 /**
- * Created by 涓藉弻 on 2015/7/2.
+ * Created by ALiao on 2015/7/2.
  */
 public class OptionAdapter extends BaseAdapter {
 
     private List<Option> mOptions;
+    private int mTouchedPosition;
 
     public OptionAdapter(List<Option> optionList) {
         mOptions = optionList;
     }
 
     public void addChoicedOption(int position){
+        L.d("addChoicedOption");
         for (Option option : mOptions){
             option.setSelected(false);
         }
@@ -50,7 +53,7 @@ public class OptionAdapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, ViewGroup parent) {
 
         Option option = mOptions.get(position);
 
@@ -68,22 +71,41 @@ public class OptionAdapter extends BaseAdapter {
         }else {
             holder = (ViewHolder) convertView.getTag();
         }
-//        holder.optionView.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                L.d("onClick");
-//            }
-//        });
+
+      /*  holder.optionView.setOnEtClickListener(new CheckedOptionView.OnEtClickListener() {
+            @Override
+            public void onClick(View v) {
+                addChoicedOption(position);
+                L.d("execute onclick");
+            }
+        });*/
+        holder.optionView.setOnEtTouchListener(new CheckedOptionView.OnEtTouchListener() {
+            @Override
+            public void onTouch(View v, MotionEvent event) {
+                if (event.getAction() == MotionEvent.ACTION_UP){
+                    L.d("execute onTouch");
+                    addChoicedOption(position);
+                    mTouchedPosition = position;
+                }
+            }
+        });
+
         if (null != option) {
-            L.d("getView refresh");
+            L.d(position +" - getView refresh");
             holder.optionView.setChecked(option.isSelected());
             holder.optionView.setText(option.getTitle());
             holder.optionView.setOptionType(option.isOpen()?"open":"normal");
         }
 
+        holder.optionView.clearEtFocus();
+        if (mTouchedPosition!=-1 && mTouchedPosition == position) {
+            // 如果当前的行下标和点击事件中保存的index一致，手动为EditText设置焦点。
+            L.d("requestFocus");
+            holder.optionView.requestEtFocus();
+        }
+
         return convertView;
     }
-
 
     class ViewHolder{
         private CheckedOptionView optionView;

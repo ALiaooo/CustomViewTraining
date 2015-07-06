@@ -3,6 +3,7 @@ package com.aliao.cvtraining.activity;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -22,6 +23,12 @@ import java.util.List;
 
 /**
  * Created by 丽双 on 2015/7/1.
+ *关于ListView中EditText在软键盘弹出后的焦点问题
+ * http://www.cnblogs.com/ycxyyzw/p/4150436.html
+ *
+ * EditText setOnClickListener事件 只有获取焦点才能响应 采用s
+ * 发现EditText setOnClickListener事件响应中，只有获取焦点的时候才会响应，如当焦点在别的控件上时，只能先点击获取焦点，第二次点击才会响应
+ * http://bbs.9ria.com/thread-240825-1-1.html
  */
 public class CheckedViewActivity extends Activity implements View.OnClickListener{
 
@@ -47,10 +54,9 @@ public class CheckedViewActivity extends Activity implements View.OnClickListene
 
         mListView = (ListView) findViewById(R.id.listview);
 
-//        mListView.setChoiceMode(AbsListView.CHOICE_MODE_SINGLE);
-        for (int i = 0; i<5; i++){
+        for (int i = 0; i<1; i++){
             Option option = new Option();
-            if (i == 3){
+            if (i == 0){
                 option.setOpen(true);
             }else option.setOpen(false);
 
@@ -63,11 +69,11 @@ public class CheckedViewActivity extends Activity implements View.OnClickListene
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 //                CheckedOptionView optionView = (CheckedOptionView) view.findViewById(R.id.checkedOptionView);
+//                optionView.setFocusable(true);
 //                optionView.toggle();
                 mAdapter.addChoicedOption(position);
             }
         });
-
 
 
         Button button = (Button) findViewById(R.id.btn_change);
