@@ -1,43 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="16dp">
 
-    <CheckedTextView
-        android:id="@+id/ctx"
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:text="checkedtextview"
-        android:background="@drawable/bg_option_selector_item"
-        android:visibility="visible"/>
+        android:layout_height="wrap_content">
 
-    <com.aliao.cvtraining.view.widget.CheckedEditText
-        android:id="@+id/cetx"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:hint="checkededittext"
-        android:background="@drawable/bg_option_selector_item"
-        android:layout_marginTop="20dp"
-        android:visibility="gone"
-        />
+        <Button
+            android:id="@+id/btn_single"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:text="单选题"
+            android:visibility="visible"/>
+        <Button
+            android:id="@+id/btn_multiple"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:text="多选题"
+            android:visibility="visible"/>
+        <Button
+            android:id="@+id/btn_open"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:text="开放题"
+            android:visibility="visible"/>
+    </LinearLayout>
 
-    <Button
-        android:id="@+id/btn_change"
+    <TextView
+        android:id="@+id/tvQuestionTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="changedata"
-        android:visibility="visible"
-        android:layout_below="@id/ctx"/>
+        android:text="你喜欢听什么类型的音乐"/>
 
     <ListView
         android:id="@+id/listview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/btn_change"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
         android:cacheColorHint="@color/transparent"
         android:clipToPadding="false"
         android:divider="@color/transparent"
@@ -45,7 +51,8 @@
         android:overScrollMode="never"
         android:paddingBottom="16dp"
         android:scrollbars="none"
+        android:layout_marginTop="10dp"
         ></ListView>
 
 
-</RelativeLayout>
+</LinearLayout>

@@ -13,31 +13,6 @@
         android:background="@drawable/bg_option_selector_item"
         android:padding="16dp"
         app:titlecolor="#666666"/>
-<!--
-    <LinearLayout
-        android:id="@+id/optionContainer"
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="16dp">
-
-        <TextView
-            android:id="@+id/checkedOptionView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/bg_option_selector_item"
-            android:padding="16dp"
-            android:textColor="#666666"/>
-
-        <EditText
-            android:id="@+id/openOption"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/bg_option_edittext"
-            android:padding="10dp"/>
-
-        </LinearLayout>-->
-
 
 
 </LinearLayout>

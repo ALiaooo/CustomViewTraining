@@ -5,12 +5,15 @@ import android.content.Context;
 import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
 import android.os.Build;
+import android.text.Editable;
 import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Checkable;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -36,7 +39,7 @@ public class CheckedOptionView extends LinearLayout implements Checkable {
     private TextView mTvTitle;
     private EditText mEtOpen;
     private Context mContext;
-    private OnEtClickListener mEtClickListener;
+    private OnEtTextWatcher mEtTextWatcher;
     private OnEtTouchListener mEtTouchListener;
 
     public CheckedOptionView(Context context) {
@@ -118,48 +121,38 @@ public class CheckedOptionView extends LinearLayout implements Checkable {
         requestLayout();
     }
 
+    public void setOpenText(String openText){
+        if (!TextUtils.isEmpty(openText))
+            mEtOpen.setText(openText);
+    }
+
     private void initEditView(EditText et) {
         et.setFocusable(true);
-        et.setEnabled(true);
         et.setBackgroundResource(R.drawable.bg_option_edittext);
-/*
-        et.setOnFocusChangeListener(new OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                if (hasFocus) {
-                    L.d("hasFocus true");
-                   */
-/* if (mEtClickListener != null)
-                        mEtClickListener.onClick(v);*//*
-
-//                    setChecked(true);
-                } else {
-                    L.d("hasFocus false");
-//                    setChecked(false);
-                }
-            }
-        });
-
-        et.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //如果edittext监测到了点击事件，那么也要执行其他选项清空选中状态
-                Toast.makeText(mContext, "onClick", Toast.LENGTH_SHORT).show();
-                L.d("et onClick");
-                if (mEtClickListener != null)
-                    mEtClickListener.onClick(v);
-            }
-        });
-*/
-
         et.setOnTouchListener(new OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                if (mEtTouchListener != null){
-                    Toast.makeText(mContext, "onTouch", Toast.LENGTH_SHORT).show();
+                if (mEtTouchListener != null) {
                     mEtTouchListener.onTouch(v, event);
                 }
                 return false;
+            }
+        });
+
+        et.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                if (mEtTextWatcher != null) {
+                    mEtTextWatcher.afterTextChange(s);
+                }
             }
         });
 
@@ -167,9 +160,6 @@ public class CheckedOptionView extends LinearLayout implements Checkable {
         et.setLayoutParams(layoutParams);
     }
 
-    public void setOnEtClickListener(OnEtClickListener l){
-        mEtClickListener = l;
-    }
 
     public void setOnEtTouchListener(OnEtTouchListener l){
         mEtTouchListener = l;
@@ -189,10 +179,26 @@ public class CheckedOptionView extends LinearLayout implements Checkable {
         void onTouch(View v, MotionEvent event);
     }
 
+
+    public void addEtTextWatcher(OnEtTextWatcher textWatcher){
+        mEtTextWatcher = textWatcher;
+    }
+
+    public interface OnEtTextWatcher {
+        void afterTextChange(Editable s);
+    }
+
+
     public void requestEtFocus(){
         mEtOpen.requestFocus();
-//        mEtOpen.setSelection(mEtOpen.getText().length());
+        mEtOpen.setSelection(mEtOpen.getText().length());
     }
+
+    public void cancelEtFocus(){
+        InputMethodManager imm = (InputMethodManager) mContext.getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(mEtOpen.getWindowToken(), 0);
+    }
+
     public void clearEtFocus(){
         mEtOpen.clearFocus();
     }
@@ -209,13 +215,11 @@ public class CheckedOptionView extends LinearLayout implements Checkable {
 
     @Override
     public void toggle() {
-        L.d("toggle = " + !mChecked);
         setChecked(!mChecked);
     }
 
 
     public void setChecked(boolean checked) {
-        L.d("setChecked = "+checked);
         if (mChecked != checked) {
             mChecked = checked;
             refreshDrawableState();
@@ -241,15 +245,6 @@ public class CheckedOptionView extends LinearLayout implements Checkable {
         super.onInitializeAccessibilityEvent(event);
         event.setClassName(CheckedOptionView.class.getName());
         event.setChecked(mChecked);
-    }
-
-
-    @Override
-    public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo info) {
-        super.onInitializeAccessibilityNodeInfo(info);
-        info.setClassName(CheckedOptionView.class.getName());
-        info.setCheckable(true);
-        info.setChecked(mChecked);
     }
 
 }

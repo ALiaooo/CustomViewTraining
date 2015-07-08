@@ -7,6 +7,20 @@ public class Option {
 
     private String title;
 
+    private boolean open;
+
+    private boolean isSelected;
+
+    private String openAnswer;
+
+    public String getOpenAnswer() {
+        return openAnswer;
+    }
+
+    public void setOpenAnswer(String openAnswer) {
+        this.openAnswer = openAnswer;
+    }
+
     public boolean isSelected() {
         return isSelected;
     }
@@ -15,7 +29,6 @@ public class Option {
         this.isSelected = isSelected;
     }
 
-    private boolean isSelected;
 
     public boolean isOpen() {
         return open;
@@ -24,8 +37,6 @@ public class Option {
     public void setOpen(boolean open) {
         this.open = open;
     }
-
-    private boolean open;
 
     public String getTitle() {
         return title;
