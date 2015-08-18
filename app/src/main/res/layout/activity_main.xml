@@ -174,6 +174,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="CheckedEditView"/>
+
+        <Button
+            android:id="@+id/btn_touch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Touch事件传递机制"/>
         </LinearLayout>
 
 

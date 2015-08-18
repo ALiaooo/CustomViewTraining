@@ -39,7 +39,7 @@ public class OptionAdapter extends BaseAdapter {
             }
         }
         Option option = mOptions.get(position);
-        option.setSelected(mQType == CheckedViewActivity.QType.MULTIPLE ? !option.isSelected() : true);//¿ª·ÅÌâÒ»Ö±ÊÇÑ¡ÖÐ×´Ì¬
+        option.setSelected(mQType == CheckedViewActivity.QType.MULTIPLE ? !option.isSelected() : true);
         notifyDataSetChanged();
     }
 
@@ -79,7 +79,7 @@ public class OptionAdapter extends BaseAdapter {
             @Override
             public void onTouch(View v, MotionEvent event) {
                 if (event.getAction() == MotionEvent.ACTION_UP){
-                    //Èç¹ûµ±Ç°¶àÑ¡¿ª·ÅÑ¡ÏîÒÑ¾­ÊÇÑ¡ÖÐ×´Ì¬£¬ÔÙ´Îµã»÷½ûÖ¹µ¯³ö¶Ô»°¿ò
+                    //ï¿½ï¿½ï¿½ï¿½ï¿½Ç°ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½Ñ¾ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½×´Ì¬ï¿½ï¿½ï¿½Ù´Îµï¿½ï¿½ï¿½ï¿½Ö¹ï¿½ï¿½ï¿½ï¿½ï¿½Ô»ï¿½ï¿½ï¿½
                     mTouchedPosition = isMultipleQuestionOpenOption(option) ? -1 : position;
                     addChoicedOption(position);
                 }
@@ -104,7 +104,7 @@ public class OptionAdapter extends BaseAdapter {
 
         holder.optionView.clearEtFocus();
         if (mTouchedPosition != -1 && mTouchedPosition == position) {
-            // Èç¹ûµ±Ç°µÄÐÐÏÂ±êºÍµã»÷ÊÂ¼þÖÐ±£´æµÄindexÒ»ÖÂ£¬ÊÖ¶¯ÎªEditTextÉèÖÃ½¹µã¡£
+            // ï¿½ï¿½ï¿½ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½Â±ï¿½Íµï¿½ï¿½ï¿½Â¼ï¿½ï¿½Ð±ï¿½ï¿½ï¿½ï¿½indexÒ»ï¿½Â£ï¿½ï¿½Ö¶ï¿½ÎªEditTextï¿½ï¿½ï¿½Ã½ï¿½ï¿½ã¡£
             holder.optionView.requestEtFocus();
         }else if (mTouchedPosition == -1){
             holder.optionView.cancelEtFocus();

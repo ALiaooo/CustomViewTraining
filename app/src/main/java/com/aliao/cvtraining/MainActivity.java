@@ -5,10 +5,13 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 
 import com.aliao.cvtraining.activity.CheckedViewActivity;
+import com.aliao.cvtraining.activity.TouchEventActivity;
 import com.aliao.cvtraining.utils.Constants;
+import com.aliao.cvtraining.utils.L;
 import com.aliao.cvtraining.view.widget.CheckedEditText;
 
 
@@ -39,6 +42,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         findViewById(R.id.btn_dream_effect_view).setOnClickListener(this);
         findViewById(R.id.btn_matrix_view).setOnClickListener(this);
         findViewById(R.id.btn_cheked_view).setOnClickListener(this);
+        findViewById(R.id.btn_touch).setOnClickListener(this);
     }
 
 
@@ -130,6 +134,10 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
             case R.id.btn_cheked_view:
                 startActivity(new Intent(MainActivity.this, CheckedViewActivity.class));
                 break;
+            case R.id.btn_touch:
+                startActivity(new Intent(MainActivity.this, TouchEventActivity.class));
+                break;
         }
     }
+
 }

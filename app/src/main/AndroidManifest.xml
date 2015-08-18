@@ -20,6 +20,7 @@
         <activity android:name=".CanvasActivity"/>
         <activity android:name=".AigeActivity"/>
         <activity android:name=".activity.CheckedViewActivity"/>
+        <activity android:name=".activity.TouchEventActivity"/>
     </application>
 
 </manifest>

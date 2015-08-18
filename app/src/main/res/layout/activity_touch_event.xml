@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.aliao.cvtraining.view.widget.CustomButton
+        android:id="@+id/btn_custom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="button"/>
+
+    <com.aliao.cvtraining.view.widget.CustomTextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="textview"
+        android:gravity="center"
+        android:layout_marginTop="20dp"/>
+
+    <com.aliao.cvtraining.view.widget.CustomLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@color/style_color_primary_light"
+        android:layout_marginTop="20dp"
+        />
+
+    <com.aliao.cvtraining.view.widget.CustomLinearLayout
+        android:id="@+id/custom_layout"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/style_color_primary"
+        android:layout_marginTop="20dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="inner textview"
+            android:gravity="center"/>
+        <Button
+            android:id="@+id/btn_inner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="inner button"/>
+    </com.aliao.cvtraining.view.widget.CustomLinearLayout>
+
+
+
+</LinearLayout>
