@@ -1,6 +1,7 @@
 package com.aliao.cvtraining.activity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
@@ -9,6 +10,7 @@ import android.widget.LinearLayout;
 
 import com.aliao.cvtraining.R;
 import com.aliao.cvtraining.utils.L;
+import com.aliao.cvtraining.view.widget.CustomButton;
 
 /**
  * Created by 丽双 on 2015/8/18.
@@ -23,10 +25,10 @@ public class TouchEventActivity extends Activity implements View.OnClickListener
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_touch_event);
-        Button button = (Button) findViewById(R.id.btn_custom);
+        CustomButton button = (CustomButton) findViewById(R.id.btn_custom);
         button.setOnClickListener(this);
         button.setOnTouchListener(this);
-        Button innerBtn = (Button) findViewById(R.id.btn_inner);
+        CustomButton innerBtn = (CustomButton) findViewById(R.id.btn_inner);
         innerBtn.setOnClickListener(this);
         innerBtn.setOnTouchListener(this);
         LinearLayout layout = (LinearLayout) findViewById(R.id.custom_layout);
@@ -75,7 +77,7 @@ public class TouchEventActivity extends Activity implements View.OnClickListener
         }
 
         boolean dispatchTouchEvent = super.dispatchTouchEvent(ev);
-        L.d("【Activity】 super.dispatchTouchEvent(ev) = "+dispatchTouchEvent);
+        L.d("【Activity】 super.dispatchTouchEvent(ev) = " + dispatchTouchEvent);
         return dispatchTouchEvent;
     }
 
@@ -126,5 +128,9 @@ public class TouchEventActivity extends Activity implements View.OnClickListener
                 break;
         }
         return false;
+    }
+
+    public void onScrollViewpager(View view){
+        startActivity(new Intent(TouchEventActivity.this, ScrollViewPagerActivity.class));
     }
 }

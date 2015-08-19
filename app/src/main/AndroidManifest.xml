@@ -21,6 +21,7 @@
         <activity android:name=".AigeActivity"/>
         <activity android:name=".activity.CheckedViewActivity"/>
         <activity android:name=".activity.TouchEventActivity"/>
+        <activity android:name=".activity.ScrollViewPagerActivity"/>
     </application>
 
 </manifest>

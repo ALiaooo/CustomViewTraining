@@ -1,0 +1,82 @@
+package com.aliao.cvtraining.view.widget;
+
+import android.content.Context;
+import android.util.AttributeSet;
+import android.view.MotionEvent;
+import android.widget.ScrollView;
+
+import com.aliao.cvtraining.utils.L;
+
+/**
+ * Created by 丽双 on 2015/8/19.
+ */
+public class CustomScrollView extends ScrollView {
+    public CustomScrollView(Context context, AttributeSet attrs) {
+        super(context, attrs);
+    }
+
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+
+        switch (ev.getAction()){
+            case MotionEvent.ACTION_DOWN:
+                L.d("Scrollview -- dispatchTouchEvent -- ACTION_DOWN");
+                break;
+
+            case MotionEvent.ACTION_MOVE:
+                L.d("Scrollview -- dispatchTouchEvent -- ACTION_MOVE");
+                break;
+
+            case MotionEvent.ACTION_UP:
+                L.d("Scrollview -- dispatchTouchEvent -- ACTION_UP");
+                break;
+        }
+
+        boolean dispatch = super.dispatchTouchEvent(ev);
+        L.d("Scrollview return dispatchTouchEvent = "+dispatch);
+        return dispatch;
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent ev) {
+
+        switch (ev.getAction()){
+            case MotionEvent.ACTION_DOWN:
+                L.d("Scrollview -- onTouchEvent -- ACTION_DOWN");
+                break;
+
+            case MotionEvent.ACTION_MOVE:
+                L.d("Scrollview -- onTouchEvent -- ACTION_MOVE");
+                break;
+
+            case MotionEvent.ACTION_UP:
+                L.d("Scrollview -- onTouchEvent -- ACTION_UP");
+                break;
+        }
+
+        boolean onTouchEvent = super.onTouchEvent(ev);
+        L.d("Scrollview return onTouchEvent = "+onTouchEvent);
+        return onTouchEvent;
+    }
+
+    @Override
+    public boolean onInterceptTouchEvent(MotionEvent ev) {
+        switch (ev.getAction()){
+            case MotionEvent.ACTION_DOWN:
+                L.d("Scrollview -- onInterceptTouchEvent -- ACTION_DOWN");
+                break;
+
+            case MotionEvent.ACTION_MOVE:
+                L.d("Scrollview -- onInterceptTouchEvent -- ACTION_MOVE");
+                break;
+
+            case MotionEvent.ACTION_UP:
+                L.d("Scrollview -- onInterceptTouchEvent -- ACTION_UP");
+                break;
+        }
+
+        boolean onInterceptTouchEvent = super.onInterceptTouchEvent(ev);
+        L.d("Scrollview return onInterceptTouchEvent = "+onInterceptTouchEvent);
+        return onInterceptTouchEvent;
+    }
+}
