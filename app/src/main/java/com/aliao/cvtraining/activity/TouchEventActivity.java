@@ -133,4 +133,8 @@ public class TouchEventActivity extends Activity implements View.OnClickListener
     public void onScrollViewpager(View view){
         startActivity(new Intent(TouchEventActivity.this, ScrollViewPagerActivity.class));
     }
+
+    public void onViewDrawingProcedure(View view){
+        startActivity(new Intent(TouchEventActivity.this, ViewDrawingProcedureActivity.class));
+    }
 }

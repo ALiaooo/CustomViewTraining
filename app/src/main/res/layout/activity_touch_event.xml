@@ -47,6 +47,11 @@
         android:layout_height="wrap_content"
         android:onClick="onScrollViewpager"
         android:text="Scroll与Viewpager冲突"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onViewDrawingProcedure"
+        android:text="View绘制流程"/>
 
 
 

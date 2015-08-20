@@ -6,6 +6,7 @@ import android.view.MotionEvent;
 import android.widget.ListView;
 
 import com.aliao.cvtraining.utils.L;
+import com.aliao.cvtraining.utils.MeasureSpecUtil;
 
 /**
  * Created by 丽双 on 2015/8/19.
@@ -19,14 +20,14 @@ public class CustomListview extends ListView {
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
 
-
+        L.d("---------------onMeasure ListView----------------");
         int widthMode = MeasureSpec.getMode(widthMeasureSpec);
         int widthSize = MeasureSpec.getSize(widthMeasureSpec);
         int heightMode = MeasureSpec.getMode(heightMeasureSpec);
         int heightSize = MeasureSpec.getSize(heightMeasureSpec);
-
-        L.d("heightMode = "+heightMode+", heightSize = "+heightSize+", widthMode = "+widthMode+", widthSize = "+widthSize);
-
+        L.d("heightMode = " + heightMode + ", heightSize = " + heightSize + ", widthMode = " + widthMode + ", widthSize = " + widthSize);
+        MeasureSpecUtil.printMode(heightMode, "height");
+        MeasureSpecUtil.printMode(widthMode, "width");
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
     }
 

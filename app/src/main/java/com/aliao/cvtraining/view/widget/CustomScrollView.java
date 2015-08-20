@@ -16,6 +16,32 @@ public class CustomScrollView extends ScrollView {
     }
 
     @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+
+        L.d("---------------onMeasure CustomScrollView----------------");
+        int widthMode = MeasureSpec.getMode(widthMeasureSpec);
+        int heightMode = MeasureSpec.getMode(heightMeasureSpec);
+        int widthSize = MeasureSpec.getSize(widthMeasureSpec);
+        int heightSize = MeasureSpec.getSize(heightMeasureSpec);
+        L.d("heightMode = " + heightMode + ", heightSize = " + heightSize + ", widthMode = " + widthMode + ", widthSize = " + widthSize);
+        printMode(heightMode, "height");
+        printMode(widthMode, "width");
+
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+    }
+
+
+    private void printMode(int mode, String tag){
+        if (mode == MeasureSpec.AT_MOST){
+            L.d(tag+" mode  = AT_MOST");
+        }else if (mode == MeasureSpec.EXACTLY){
+            L.d(tag+" mode  = EXACTLY");
+        }else if (mode == MeasureSpec.UNSPECIFIED){
+            L.d(tag+" mode  = UNSPECIFIED");
+        }
+    }
+
+    @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
 
         switch (ev.getAction()){
