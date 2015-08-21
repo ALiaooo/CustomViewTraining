@@ -7,7 +7,8 @@
     <com.aliao.cvtraining.view.widget.CustomTextView
         android:layout_width="200dp"
         android:layout_height="100dp"
-        android:text="exactly"/>
+        android:text="exactly"
+        android:background="@android:color/holo_blue_light"/>
 
     <com.aliao.cvtraining.view.widget.CustomTextView
         android:layout_width="wrap_content"
@@ -22,12 +23,33 @@
 
     <com.aliao.cvtraining.view.widget.CustomTextView
         android:layout_width="wrap_content"
-        android:layout_height="20dp"
+        android:layout_height="300dp"
         android:text="textview4"/>
+
+    <com.aliao.cvtraining.view.widget.CustomLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.aliao.cvtraining.view.widget.CustomTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="hello"
+            android:gravity="center"
+            android:background="@android:color/holo_red_light"/>
+
+    </com.aliao.cvtraining.view.widget.CustomLinearLayout>
+
+    <com.aliao.cvtraining.view.widget.CustomTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="hello yo"
+        android:visibility="gone"/>
 
     <com.aliao.cvtraining.view.widget.CustomScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/style_color_primary_light"
+        android:visibility="gone">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
