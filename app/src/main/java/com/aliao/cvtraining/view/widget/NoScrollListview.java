@@ -10,6 +10,7 @@ import com.aliao.cvtraining.utils.MeasureSpecUtil;
 /**
  * Created by sf on 2015/2/10.
  * desc:
+ * anthor method : http://segmentfault.com/q/1010000002801215
  */
 public class NoScrollListview extends ListView {
 

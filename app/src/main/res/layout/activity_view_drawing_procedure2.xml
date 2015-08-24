@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.aliao.cvtraining.view.widget.CustomFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.aliao.cvtraining.view.widget.CustomScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.aliao.cvtraining.view.widget.CustomLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+        </com.aliao.cvtraining.view.widget.CustomLinearLayout>
+
+    </com.aliao.cvtraining.view.widget.CustomScrollView>
+
+    <com.aliao.cvtraining.view.widget.CustomListview
+        android:id="@+id/listview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:background="@color/style_color_primary_light"
+        android:visibility="gone"
+        />
+</com.aliao.cvtraining.view.widget.CustomFrameLayout>

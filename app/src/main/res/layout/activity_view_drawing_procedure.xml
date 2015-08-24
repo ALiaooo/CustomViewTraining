@@ -32,7 +32,7 @@
 
         <com.aliao.cvtraining.view.widget.CustomTextView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="300dp"
             android:text="hello"
             android:gravity="center"
             android:background="@android:color/holo_red_light"/>
