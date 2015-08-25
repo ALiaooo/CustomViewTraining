@@ -31,7 +31,7 @@ public class ViewDrawingProcedureActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_view_drawing_procedure);//activity_view_drawing_procedure
+        setContentView(R.layout.activity_view_drawing_procedure2);//activity_view_drawing_procedure
 //        initDataSet();
 //        initInstances();
     }

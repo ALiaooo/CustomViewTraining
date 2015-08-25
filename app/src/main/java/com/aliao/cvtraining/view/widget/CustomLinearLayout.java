@@ -19,17 +19,27 @@ public class CustomLinearLayout extends LinearLayout {
     }
 
 
+
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        L.d("---------------onMeasure LinearLayout----------------");
         int widthMode = MeasureSpec.getMode(widthMeasureSpec);
         int heightMode = MeasureSpec.getMode(heightMeasureSpec);
         int widthSize = MeasureSpec.getSize(widthMeasureSpec);
         int heightSize = MeasureSpec.getSize(heightMeasureSpec);
-        L.d("heightMode = " + heightMode + ", heightSize = " + heightSize + ", widthMode = " + widthMode + ", widthSize = " + widthSize);
-        MeasureSpecUtil.printMode(heightMode, "height");
-        MeasureSpecUtil.printMode(widthMode, "width");
+        MeasureSpecUtil.printMeasureSpec("LinearLayout", widthMeasureSpec, heightMeasureSpec);
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+    }
+
+    @Override
+    protected void onLayout(boolean changed, int l, int t, int r, int b) {
+        L.d(">> onLayout: "+"LinearLayout"+"  ["+"left = "+l+", top = "+t+", right = "+r+", bottom = "+b+"]");
+        super.onLayout(changed, l, t, r, b);
+    }
+
+
+    public void layoutVertical(int left, int top, int right, int bottom){
+
+
     }
 
     public static int getChildMeasureSpec(int parentHeightSpec, int padding, int childHeight){//childHeight = lp.height

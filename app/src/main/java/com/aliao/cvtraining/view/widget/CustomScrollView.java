@@ -26,8 +26,12 @@ public class CustomScrollView extends ScrollView {
         L.d("heightMode = " + heightMode + ", heightSize = " + heightSize + ", widthMode = " + widthMode + ", widthSize = " + widthSize);
         printMode(heightMode, "height");
         printMode(widthMode, "width");
+        L.d("measure before : getMeasuredHeight = " + getMeasuredHeight() + ", getMeasuredWidth = " + getMeasuredWidth() + ",getChildCount() = "+getChildCount());
+
+
 
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+        L.d("measure after : getMeasuredHeight = " + getMeasuredHeight() + ", getMeasuredWidth = " + getMeasuredWidth() + ",getChildCount() = "+getChildCount());
     }
 
 

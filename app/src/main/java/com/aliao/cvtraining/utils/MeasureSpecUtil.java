@@ -16,4 +16,24 @@ public class MeasureSpecUtil {
             L.d(tag+" mode  = UNSPECIFIED");
         }
     }
+    public static void printMeasureSpec(String tag, int widthMeasureSpec, int heightMeasureSpec){
+
+        int widthMode = View.MeasureSpec.getMode(widthMeasureSpec);
+        int heightMode = View.MeasureSpec.getMode(heightMeasureSpec);
+        int widthSize = View.MeasureSpec.getSize(widthMeasureSpec);
+        int heightSize = View.MeasureSpec.getSize(heightMeasureSpec);
+
+        L.d("> onMeasure: "+tag+"  [w: "+widthSize+"  "+getMode(widthMode)+",       h: "+heightSize+"  "+getMode(heightMode)+"]");
+    }
+
+    private static String getMode(int mode){
+        if (mode == View.MeasureSpec.AT_MOST){
+            return "at_most";
+        }else if (mode == View.MeasureSpec.EXACTLY){
+            return "exactly";
+        }else if (mode == View.MeasureSpec.UNSPECIFIED){
+            return "unspecified";
+        }
+        return null;
+    }
 }

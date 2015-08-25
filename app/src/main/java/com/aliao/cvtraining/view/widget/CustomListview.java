@@ -20,15 +20,14 @@ public class CustomListview extends ListView {
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
 
-        L.d("---------------onMeasure ListView----------------");
         int widthMode = MeasureSpec.getMode(widthMeasureSpec);
         int widthSize = MeasureSpec.getSize(widthMeasureSpec);
         int heightMode = MeasureSpec.getMode(heightMeasureSpec);
         int heightSize = MeasureSpec.getSize(heightMeasureSpec);
-        L.d("heightMode = " + heightMode + ", heightSize = " + heightSize + ", widthMode = " + widthMode + ", widthSize = " + widthSize);
-        MeasureSpecUtil.printMode(heightMode, "height");
-        MeasureSpecUtil.printMode(widthMode, "width");
+        MeasureSpecUtil.printMeasureSpec("ListView", widthMeasureSpec, heightMeasureSpec);
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+
+        L.d("getMeasuredHeight = "+getMeasuredHeight()+",getMeasuredWidth = "+getMeasuredWidth());
     }
 
     @Override
