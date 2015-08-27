@@ -9,6 +9,7 @@ import android.view.MotionEvent;
 import android.view.View;
 
 import com.aliao.cvtraining.activity.CheckedViewActivity;
+import com.aliao.cvtraining.activity.CustomShowActivity;
 import com.aliao.cvtraining.activity.TouchEventActivity;
 import com.aliao.cvtraining.utils.Constants;
 import com.aliao.cvtraining.utils.L;
@@ -26,6 +27,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
     }
 
     private void initViews() {
+        findViewById(R.id.btn_show_custom).setOnClickListener(this);
         findViewById(R.id.btn_canvas).setOnClickListener(this);
         findViewById(R.id.btn_aige_circular_ring).setOnClickListener(this);
         findViewById(R.id.btn_aige_color_filter).setOnClickListener(this);
@@ -136,6 +138,9 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
                 break;
             case R.id.btn_touch:
                 startActivity(new Intent(MainActivity.this, TouchEventActivity.class));
+                break;
+            case R.id.btn_show_custom:
+                startActivity(new Intent(MainActivity.this, CustomShowActivity.class));
                 break;
         }
     }

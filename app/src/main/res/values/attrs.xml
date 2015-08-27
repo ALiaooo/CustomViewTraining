@@ -17,6 +17,12 @@
 
     </declare-styleable>
 
+    <declare-styleable name="NumTitleView">
+        <attr name="numText" format="string"/>
+        <attr name="numtextColor" format="color"/>
+        <attr name="numTextSize" format="dimension"/>
+    </declare-styleable>
+
 <!--    <declare-styleable name="CheckedLinearLayout">
         <attr name="titletext" format="string"/>
         <attr name="titlecolor" format="color"/>

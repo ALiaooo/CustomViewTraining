@@ -2,8 +2,21 @@
 <com.aliao.cvtraining.view.widget.CustomLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:gravity="center_vertical"
+    >
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="hello33333"
+        android:layout_gravity="right"
+        android:layout_marginLeft="10dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="hello"/>
     <com.aliao.cvtraining.view.widget.CustomScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
