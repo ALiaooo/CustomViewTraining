@@ -14,11 +14,10 @@ import com.aliao.cvtraining.utils.MeasureSpecUtil;
  * Created by 丽双 on 2015/8/18.
  */
 public class CustomLinearLayout extends LinearLayout {
+
     public CustomLinearLayout(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
-
-
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {

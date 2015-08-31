@@ -2,6 +2,7 @@ package com.aliao.cvtraining.view.widget;
 
 import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.view.View;
@@ -81,6 +82,9 @@ public class NumTitleView extends View {
         int bottom = top + mHeight;
         //要获取到控件的上下左右的坐标点，确定他的位置和大小，然后再来支笔才能开始画
         canvas.drawRect( left, top, right, bottom, mPaint);
+//        canvas.drawColor(Color.BLUE);
+//        canvas.clipRect(20, 20, 200, 200);
+//        canvas.drawColor(Color.RED);
     }
 
 
