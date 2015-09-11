@@ -24,6 +24,8 @@
         <activity android:name=".activity.ScrollViewPagerActivity"/>
         <activity android:name=".activity.ViewDrawingProcedureActivity"/>
         <activity android:name=".activity.CustomShowActivity"/>
+        <activity android:name=".activity.PullToRefreshActivity"/>
+        <activity android:name=".activity.SimpleTouchEventActivity"/>
     </application>
 
 </manifest>

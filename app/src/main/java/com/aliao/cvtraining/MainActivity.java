@@ -10,6 +10,8 @@ import android.view.View;
 
 import com.aliao.cvtraining.activity.CheckedViewActivity;
 import com.aliao.cvtraining.activity.CustomShowActivity;
+import com.aliao.cvtraining.activity.PullToRefreshActivity;
+import com.aliao.cvtraining.activity.SimpleTouchEventActivity;
 import com.aliao.cvtraining.activity.TouchEventActivity;
 import com.aliao.cvtraining.utils.Constants;
 import com.aliao.cvtraining.utils.L;
@@ -45,6 +47,8 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         findViewById(R.id.btn_matrix_view).setOnClickListener(this);
         findViewById(R.id.btn_cheked_view).setOnClickListener(this);
         findViewById(R.id.btn_touch).setOnClickListener(this);
+        findViewById(R.id.btn_pulltorefresh).setOnClickListener(this);
+        findViewById(R.id.btn_simple_touch_event).setOnClickListener(this);
     }
 
 
@@ -141,6 +145,12 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
                 break;
             case R.id.btn_show_custom:
                 startActivity(new Intent(MainActivity.this, CustomShowActivity.class));
+                break;
+            case R.id.btn_pulltorefresh:
+                startActivity(new Intent(MainActivity.this, PullToRefreshActivity.class));
+                break;
+            case R.id.btn_simple_touch_event:
+                startActivity(new Intent(MainActivity.this, SimpleTouchEventActivity.class));
                 break;
         }
     }

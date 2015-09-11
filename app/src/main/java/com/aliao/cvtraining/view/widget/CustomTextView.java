@@ -20,10 +20,6 @@ public class CustomTextView extends TextView {
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
 
-        int widthMode = MeasureSpec.getMode(widthMeasureSpec);
-        int heightMode = MeasureSpec.getMode(heightMeasureSpec);
-        int widthSize = MeasureSpec.getSize(widthMeasureSpec);
-        int heightSize = MeasureSpec.getSize(heightMeasureSpec);
         MeasureSpecUtil.printMeasureSpec("TextView", widthMeasureSpec, heightMeasureSpec);
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
     }
@@ -37,13 +33,22 @@ public class CustomTextView extends TextView {
     public boolean dispatchTouchEvent(MotionEvent event) {
         switch (event.getAction()){
             case MotionEvent.ACTION_DOWN:
-                L.d("textview dispatchTouchEvent ACTION_DOWN");
+                L.d("[textview] dispatchTouchEvent ACTION_DOWN");
+                break;
+            case MotionEvent.ACTION_POINTER_DOWN:
+                L.d("[textview] dispatchTouchEvent ACTION_POINTER_DOWN");
                 break;
             case MotionEvent.ACTION_MOVE:
-                L.d("textview dispatchTouchEvent ACTION_MOVE");
+                L.d("-->[textview] dispatchTouchEvent ACTION_MOVE");
                 break;
             case MotionEvent.ACTION_UP:
-                L.d("textview dispatchTouchEvent ACTION_UP");
+                L.d("---->[textview] dispatchTouchEvent ACTION_UP");
+                break;
+            case MotionEvent.ACTION_POINTER_UP:
+                L.d("[textview] dispatchTouchEvent ACTION_POINTER_UP");
+                break;
+            case MotionEvent.ACTION_CANCEL:
+                L.d("[textview] dispatchTouchEvent ACTION_CANCEL");
                 break;
             default:
                 break;
@@ -57,13 +62,22 @@ public class CustomTextView extends TextView {
     public boolean onTouchEvent(MotionEvent event) {
         switch (event.getAction()){
             case MotionEvent.ACTION_DOWN:
-                L.d("textview onTouchEvent ACTION_DOWN");
+                L.d("[textview] onTouchEvent ACTION_DOWN");
+                break;
+            case MotionEvent.ACTION_POINTER_DOWN:
+                L.d("[textview] onTouchEvent ACTION_POINTER_DOWN");
                 break;
             case MotionEvent.ACTION_MOVE:
-                L.d("textview onTouchEvent ACTION_MOVE");
+                L.d("-->[textview] onTouchEvent ACTION_MOVE");
                 break;
             case MotionEvent.ACTION_UP:
-                L.d("textview onTouchEvent ACTION_UP");
+                L.d("---->[textview] onTouchEvent ACTION_UP");
+                break;
+            case MotionEvent.ACTION_POINTER_UP:
+                L.d("[textview] onTouchEvent ACTION_POINTER_UP");
+                break;
+            case MotionEvent.ACTION_CANCEL:
+                L.d("[textview] onTouchEvent ACTION_CANCEL");
                 break;
             default:
                 break;

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.aliao.cvtraining.view.widget.TouchLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="30dp">
+
+    <com.aliao.cvtraining.view.widget.TouchTextView
+        android:id="@+id/tv_touch"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:text="touch me"
+        android:background="@color/style_color_primary"
+        android:gravity="center"/>
+
+    <com.aliao.cvtraining.view.widget.TouchButton
+        android:id="@+id/btn_touch"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:longClickable="true"
+        android:hapticFeedbackEnabled="true"
+        android:text="touch me too"/>
+
+</com.aliao.cvtraining.view.widget.TouchLinearLayout>

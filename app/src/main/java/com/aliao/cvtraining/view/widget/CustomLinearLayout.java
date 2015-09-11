@@ -115,11 +115,17 @@ public class CustomLinearLayout extends LinearLayout {
             case MotionEvent.ACTION_DOWN:
                 L.d("Linearlayout dispatchTouchEvent ACTION_DOWN");
                 break;
+            case MotionEvent.ACTION_POINTER_DOWN:
+                L.d("Linearlayout dispatchTouchEvent ACTION_POINTER_DOWN");
+                break;
             case MotionEvent.ACTION_MOVE:
                 L.d("Linearlayout dispatchTouchEvent ACTION_MOVE");
                 break;
             case MotionEvent.ACTION_UP:
                 L.d("Linearlayout dispatchTouchEvent ACTION_UP");
+                break;
+            case MotionEvent.ACTION_POINTER_UP:
+                L.d("Linearlayout dispatchTouchEvent ACTION_POINTER_UP");
                 break;
             default:
                 break;
@@ -135,11 +141,17 @@ public class CustomLinearLayout extends LinearLayout {
             case MotionEvent.ACTION_DOWN:
                 L.d("Linearlayout onTouchEvent ACTION_DOWN");
                 break;
+            case MotionEvent.ACTION_POINTER_DOWN:
+                L.d("Linearlayout onTouchEvent ACTION_POINTER_DOWN");
+                break;
             case MotionEvent.ACTION_MOVE:
                 L.d("Linearlayout onTouchEvent ACTION_MOVE");
                 break;
             case MotionEvent.ACTION_UP:
                 L.d("Linearlayout onTouchEvent ACTION_UP");
+                break;
+            case MotionEvent.ACTION_POINTER_UP:
+                L.d("Linearlayout onTouchEvent ACTION_POINTER_UP");
                 break;
             default:
                 break;

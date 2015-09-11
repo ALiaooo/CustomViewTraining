@@ -8,15 +8,49 @@
     <com.aliao.cvtraining.view.widget.CustomLinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible">
+
+        <com.aliao.cvtraining.view.widget.CustomTextView
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:text="高是50dp"
+            android:background="@color/style_color_primary"/>
+
+        <com.aliao.cvtraining.view.widget.CustomTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:gravity="center_vertical"
+            android:text="高是wrap_content"
+            android:background="@color/style_color_primary_light"
+            />
+    </com.aliao.cvtraining.view.widget.CustomLinearLayout>
+
+    <com.aliao.cvtraining.view.widget.CustomLinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:gravity="center"
-        android:weightSum="1">
+        android:weightSum="1"
+        android:background="@color/style_color_primary_dark"
+        android:visibility="gone">
+
+        <com.aliao.cvtraining.view.widget.CustomTextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_weight="0.5"
+            android:text="first child"
+            android:gravity="center"
+            android:background="@android:color/white"/>
+
+
         <com.aliao.cvtraining.view.widget.CustomTextView
             android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:layout_weight="0.5"
-            android:text="button"
-            android:gravity="center"/>
+            android:layout_weight="0.25"
+            android:text="second child"
+            android:gravity="center"
+            android:background="@color/style_color_primary"/>
 
     </com.aliao.cvtraining.view.widget.CustomLinearLayout>
 
@@ -42,7 +76,8 @@
             android:layout_width="100dp"
             android:layout_height="50dp"
             android:text="Fighting"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginTop="10dp"
+            android:background="@color/style_color_primary"/>
 
 
         <TextView
