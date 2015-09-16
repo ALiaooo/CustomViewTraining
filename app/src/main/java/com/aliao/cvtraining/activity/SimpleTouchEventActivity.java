@@ -52,21 +52,23 @@ public class SimpleTouchEventActivity extends AppCompatActivity {
 //        });
 //
 
-        TextView touchTv = (TextView) findViewById(R.id.tv_touch);
+/*        TextView touchTv = (TextView) findViewById(R.id.tv_touch);
         touchTv.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 Toast.makeText(SimpleTouchEventActivity.this, "touch", Toast.LENGTH_SHORT).show();
                 return false;
             }
-        });
+        });*/
+
 //        touchTv.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
 //                Toast.makeText(SimpleTouchEventActivity.this, "click", Toast.LENGTH_SHORT).show();
 //            }
 //        });
-        Button touchBtn = (Button) findViewById(R.id.btn_touch);
+
+/*        Button touchBtn = (Button) findViewById(R.id.btn_touch);
 
         findViewById(R.id.btn_touch).setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -83,18 +85,19 @@ public class SimpleTouchEventActivity extends AppCompatActivity {
                 L.d("长按");
                 return false;
             }
-        });
+        });*/
+
 //        touchBtn.setHapticFeedbackEnabled(true);
 //        touchBtn.performHapticFeedback(HapticFeedbackConstants.LONG_PRESS, HapticFeedbackConstants.FLAG_IGNORE_GLOBAL_SETTING);
 //        touchBtn.playSoundEffect(SoundEffectConstants.CLICK);
 
-        findViewById(R.id.btn_touch).setOnClickListener(new View.OnClickListener() {
+/*        findViewById(R.id.btn_touch).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(SimpleTouchEventActivity.this, "点击", Toast.LENGTH_SHORT).show();
                 L.d("点击");
 
             }
-        });
+        });*/
     }
 }

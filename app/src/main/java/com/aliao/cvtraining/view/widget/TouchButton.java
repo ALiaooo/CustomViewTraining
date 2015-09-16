@@ -17,6 +17,41 @@ public class TouchButton extends Button {
     }
 
     @Override
+    public boolean dispatchTouchEvent(MotionEvent event) {
+        switch (event.getAction()){
+            case MotionEvent.ACTION_DOWN:
+                float x = event.getX();
+                float y = event.getY();
+
+                event.getActionMasked();
+                int activePointerId = event.getActionIndex();
+
+                ViewLogUtil.touchLog("Button", "dispatchTouchEvent", "ACTION_DOWN" + "[ x = " + x +", y = " + y + ", activePointerId = " + activePointerId + " ]");
+                break;
+            case MotionEvent.ACTION_POINTER_DOWN:
+                ViewLogUtil.touchLog("Button", "dispatchTouchEvent", "ACTION_POINTER_DOWN");
+                break;
+            case MotionEvent.ACTION_MOVE:
+                ViewLogUtil.touchLog("Button", "dispatchTouchEvent", "ACTION_MOVE");
+                break;
+            case MotionEvent.ACTION_UP:
+                ViewLogUtil.touchLog("Button", "dispatchTouchEvent", "ACTION_UP");
+                break;
+            case MotionEvent.ACTION_POINTER_UP:
+                ViewLogUtil.touchLog("Button", "dispatchTouchEvent", "ACTION_POINTER_UP");
+                break;
+            case MotionEvent.ACTION_CANCEL:
+                ViewLogUtil.touchLog("Button", "dispatchTouchEvent", "cancel");
+                break;
+
+        }
+
+        boolean result = super.dispatchTouchEvent(event);
+        ViewLogUtil.touchLog("Button", "dispatchTouchEvent", "return " + result);
+        return result;
+    }
+
+    @Override
     public boolean onTouchEvent(MotionEvent event) {
 
         switch (event.getAction()){
@@ -34,6 +69,9 @@ public class TouchButton extends Button {
                 break;
             case MotionEvent.ACTION_POINTER_UP:
                 ViewLogUtil.touchLog("Button", "onTouchEvent", "ACTION_POINTER_UP");
+                break;
+            case MotionEvent.ACTION_CANCEL:
+                ViewLogUtil.touchLog("Button", "onTouchEvent", "cancel");
                 break;
 
         }
